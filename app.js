@@ -13,6 +13,7 @@ navigator.serviceWorker.register('/fmorel002.github.io/sw.js', { scope: '/fmorel
       console.log('Service worker installed');
     } else if(serviceWorkerRegistration.active) {
       console.log('Service worker active');
+      serviceWorkerRegistration.showNotification("Vibration Sample");
     }
     serviceWorkerRegistration.pushManager.subscribe().then(
       function(pushSubscription) {

@@ -22,6 +22,16 @@ navigator.serviceWorker.register('/fmorel002.github.io/sw.js').then(
     );
   });
 
+  function showNotification() {
+    Notification.requestPermission(function(result) {
+      if (result === 'granted') {
+        navigator.serviceWorker.ready.then(function(registration) {
+          registration.showNotification('Vibration Sample');
+        });
+      }
+    });
+  }
+
 // register service worker
 
 /*if ('serviceWorker' in navigator) {

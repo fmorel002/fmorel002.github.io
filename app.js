@@ -34,9 +34,11 @@ navigator.serviceWorker.register('/fmorel002.github.io/sw.js').then(
   function showNotification() {
     Notification.requestPermission(function(result) {
       if (result === 'granted') {
+        console.log("show notifs1");
         navigator.serviceWorker.ready.then(function(registration) {
+          console.log("show notifs2");
           registration.showNotification('Vibration Sample');
-          console.log("show notifs done");
+
         });
       }
     });

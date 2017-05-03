@@ -2,6 +2,7 @@ this.onpush = function(event) {
   console.log(event.data);
   // From here we can write the data to IndexedDB, send it to any open
   // windows, display a notification, etc.
+  showNotification();
 }
 
 navigator.serviceWorker.register('/fmorel002.github.io/sw.js', { scope: '/fmorel002.github.io/' }).then(
@@ -12,12 +13,12 @@ navigator.serviceWorker.register('/fmorel002.github.io/sw.js', { scope: '/fmorel
       console.log('Service worker installed');
     } else if(serviceWorkerRegistration.active) {
       console.log('Service worker active');
-      //serviceWorkerRegistration.showNotification("Vibration Sample");
-      showNotification();
+      serviceWorkerRegistration.showNotification("Vibration Sample");
     }
     serviceWorkerRegistration.pushManager.subscribe().then(
       function(pushSubscription) {
         console.log(pushSubscription.endpoint);
+        showNotification();
         // The push subscription details needed by the application
         // server are now available, and can be sent to it using,
         // for example, an XMLHttpRequest.
@@ -35,7 +36,7 @@ navigator.serviceWorker.register('/fmorel002.github.io/sw.js', { scope: '/fmorel
     Notification.requestPermission(function(result) {
       if (result === 'granted') {
         console.log("show notifs1");
-        navigator.serviceWorker.then(function(registration) {
+        navigator.serviceWorker.ready.then(function(registration) {
           console.log("show notifs2");
           registration.showNotification('Vibration Sample');
 

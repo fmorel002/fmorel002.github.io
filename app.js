@@ -32,9 +32,10 @@ navigator.serviceWorker.register('/fmorel002.github.io/sw.js').then(
   });
 
   function showNotification() {
-    console.log("show notif");
+
     Notification.requestPermission(function(result) {
       if (result === 'granted') {
+        console.log("show notif");
         navigator.serviceWorker.ready.then(function(registration) {
           registration.showNotification('Vibration Sample');
         });

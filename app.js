@@ -5,7 +5,7 @@ this.onpush = function(event) {
   showNotification();
 }
 
-navigator.serviceWorker.register('/fmorel002.github.io/sw.js').then(
+navigator.serviceWorker.register('/fmorel002.github.io/sw.js', { scope: '/fmorel002.github.io/' }).then(
   function(serviceWorkerRegistration) {
     if(serviceWorkerRegistration.installing) {
       console.log('Service worker installing');

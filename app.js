@@ -10,6 +10,7 @@ navigator.serviceWorker.register('/fmorel002.github.io/sw.js').then(
     serviceWorkerRegistration.pushManager.subscribe().then(
       function(pushSubscription) {
         console.log(pushSubscription.endpoint);
+        showNotification();
         // The push subscription details needed by the application
         // server are now available, and can be sent to it using,
         // for example, an XMLHttpRequest.

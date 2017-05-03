@@ -9,8 +9,7 @@ this.addEventListener('install', function(event) {
         '/fmorel002.github.io/image-list.js',
         '/fmorel002.github.io/star-wars-logo.jpg',
         '/fmorel002.github.io/gallery/bountyHunters.jpg',
-        '/fmorel002.github.io/gallery/myLittleVader.jpg',
-        '/fmorel002.github.iot/gallery/snowTroopers.jpg'
+        '/fmorel002.github.io/gallery/myLittleVader.jpg'
       ]);
     })
   );

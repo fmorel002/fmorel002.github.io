@@ -30,7 +30,7 @@ this.addEventListener('fetch', function(event) {
   }));
 });
 
-self.addEventListener('push', function(event) {
+this.addEventListener('push', function(event) {
   if (!(self.Notification && self.notification.permission === 'granted')) {
     return;
   }

@@ -7,6 +7,13 @@ this.onpush = function(event) {
 
 navigator.serviceWorker.register('/fmorel002.github.io/sw.js').then(
   function(serviceWorkerRegistration) {
+    if(serviceWorkerRegistration.installing) {
+      console.log('Service worker installing');
+    } else if(serviceWorkerRegistration.waiting) {
+      console.log('Service worker installed');
+    } else if(serviceWorkerRegistration.active) {
+      console.log('Service worker active');
+    }
     serviceWorkerRegistration.pushManager.subscribe().then(
       function(pushSubscription) {
         console.log(pushSubscription.endpoint);

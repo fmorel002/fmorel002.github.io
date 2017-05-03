@@ -1,4 +1,4 @@
-this.addEventListener('install', function(event) {
+/*this.addEventListener('install', function(event) {
   event.waitUntil(
     caches.open('v1').then(function(cache) {
       return cache.addAll([
@@ -13,9 +13,9 @@ this.addEventListener('install', function(event) {
       ]);
     })
   );
-});
+});*/
 
-this.addEventListener('fetch', function(event) {
+/*this.addEventListener('fetch', function(event) {
   var response;
   event.respondWith(caches.match(event.request).catch(function() {
     return fetch(event.request);
@@ -28,7 +28,7 @@ this.addEventListener('fetch', function(event) {
   }).catch(function() {
     return caches.match('/fmorel002.github.io/gallery/myLittleVader.jpg');
   }));
-});
+});*/
 
 this.addEventListener('push', function(event) {
   if (!(self.Notification && self.notification.permission === 'granted')) {

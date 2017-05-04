@@ -1,4 +1,5 @@
 function registerServiceWorker() {
+  console.log("function 1 of app.js");
   if ('serviceWorker' in navigator) {
     // enregistrement du fichier 'service-worker.js' présent à la racine de l'application
     navigator.serviceWorker.register('/fmorel002.github.io/sw.js').then(function (reg) {

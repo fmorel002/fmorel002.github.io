@@ -3,7 +3,18 @@
 * Associe un utilisateur à un endpoint de Push Server
 */
 <?php
+
+function debug_to_console( $data ) {
+    $output = $data;
+    if ( is_array( $output ) )
+        $output = implode( ',', $output);
+
+    echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+}
+
+debug_to_console("step 1 register notif");
 //public function registerToNotification(){
+
   $content = file_get_contents("php://input");
   $data = json_decode($content);
 

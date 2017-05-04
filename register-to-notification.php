@@ -3,8 +3,7 @@
 * Associe un utilisateur à un endpoint de Push Server
 */
 <?php
-console.log("register to notif");
-public function registerToNotification(){
+//public function registerToNotification(){
   $content = file_get_contents("php://input");
   $data = json_decode($content);
 
@@ -18,7 +17,7 @@ public function registerToNotification(){
    $this->notificationService->registerUser($this->userService->getLoggedUser(), $endpoint);
 
   // ... puis renvoyer le résultat souhaité
-}
+//}
 
 $fields = array
 (

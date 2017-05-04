@@ -20,7 +20,7 @@ console.log("function 2 app.js");
     return serviceWorkerRegistration.pushManager.subscribe({ userVisibleOnly: true });
   }).then(function (subscription) {
     //sauvegarde de l'inscription dans le serveur applicatif (2)
-    fetch('/fmorel002.github.io/register-to-notification', {
+    fetch('/fmorel002.github.io/register-to-notification.php', {
       method: 'post',
       headers: {
         'Accept': 'application/json',

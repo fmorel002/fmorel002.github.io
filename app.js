@@ -1,4 +1,4 @@
-function registerServiceWorker() {
+//function registerServiceWorker() {
   console.log("function 1 of app.js");
   if ('serviceWorker' in navigator) {
     // enregistrement du fichier 'service-worker.js' présent à la racine de l'application
@@ -11,9 +11,10 @@ function registerServiceWorker() {
       console.log('Registration failed with ' + error);
     });
   }
-}
+//}
 
-function subscribeDevice() {
+//function subscribeDevice() {
+console.log("function 2 app.js");
   navigator.serviceWorker.ready.then(function (serviceWorkerRegistration) {
     // Demande d'inscription au Push Server (1)
     return serviceWorkerRegistration.pushManager.subscribe({ userVisibleOnly: true });
@@ -36,7 +37,7 @@ function subscribeDevice() {
     // Check for a permission prompt issue
     console.log('Subscription failed ' + subscriptionErr);
   });
-}
+//}
 
 
 /*this.onpush = function(event) {

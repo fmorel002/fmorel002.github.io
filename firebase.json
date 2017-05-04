@@ -1,14 +1,8 @@
 {
-  "database": {
-    "rules": "database.rules.json"
-  },
   "hosting": {
-    "public": "public",
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
+    "public": "./",
+    "ignore": [
+      "firebase.json"
     ]
   }
 }

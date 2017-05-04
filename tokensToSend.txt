@@ -1,0 +1,16 @@
+serveur : AAAAmXRZXcg:APA91bFKGlJSj24TecwhpB-SNCsKjlmDTc7OEkxEmJOcz4zJxLLdHlz5bHM8B39WkRI9k7kvF7Fv1NebzHLqxaNuXh6mzrWcvhaUR_9Sn_omPTV0pmxw0ICsNE5JW1jBsAZ3Vnd4ZT1v
+
+IDD : emLEcElsmMY:APA91bHljqq3jFubeuUyyWr0wf81iicESNqUFijXR-KVNx83xDpUGX62_-wwpeOvN7IrhSxTOJ0sweWe6bjGDyfA4mGFhDTNcmI-794di9426cHg8lI5Fc-Xuxr0FQLcxWL-y6WAoYtV
+
+
+Curl : 
+
+curl -X POST -H "Authorization: key=AAAAmXRZXcg:APA91bFKGlJSj24TecwhpB-SNCsKjlmDTc7OEkxEmJOcz4zJxLLdHlz5bHM8B39WkRI9k7kvF7Fv1NebzHLqxaNuXh6mzrWcvhaUR_9Sn_omPTV0pmxw0ICsNE5JW1jBsAZ3Vnd4ZT1v" -H "Content-Type: application/json" -d '{
+  "notification": {
+    "title": "Portugal vs. Denmark",
+    "body": "5 to 1",
+    "icon": "firebase-logo.png",
+    "click_action": "http://localhost:8081"
+  },
+  "to": "dZZoTbgR-Cc:APA91bEUkm4Wg54mpQqhoGSkR-DTv_erUtrPshIJz7_MrXF8J-PxNxKSm-l9JmQm33Qb1hdTx-161pnUV9pxMMjNn-rw4-JCGSYmTq23UE8DsQGXRzejy9G24Vz4clzUE6I9-ygIFNc-"
+}' "https://fcm.googleapis.com/fcm/send"

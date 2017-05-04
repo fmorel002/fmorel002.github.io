@@ -1,0 +1,27 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      C:\Program Files\nodejs\node.exe C:\Users\Ulyces\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve -p 8081
+[debug] CLI Version:  3.6.1
+[debug] Platform:     win32
+[debug] Node Version: v7.9.0
+[debug] Time:         Thu May 04 2017 10:45:04 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] ----------------------------------------------------------------------
+[debug] 
+[debug] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/projetpush-cd2bc  
+ Thu May 04 2017 10:45:04 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/projetpush-cd2bc/tokens  
+ Thu May 04 2017 10:45:05 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] <<< HTTP RESPONSE 200
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: C:\Users\Ulyces\Documents\firebaseProjectPush
+[debug] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/projetpush-cd2bc  
+ Thu May 04 2017 10:45:06 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] <<< HTTP RESPONSE 200
+[debug] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/659082010056/clients/_:getWebAppConfig  
+ Thu May 04 2017 10:45:06 GMT+0200 (Paris, Madrid (heure d’été))
+[debug] <<< HTTP RESPONSE 200
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:8081

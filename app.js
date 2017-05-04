@@ -13,7 +13,7 @@
   }
 //}
 
-//function subscribeDevice() {
+function subscribeDevice() {
 console.log("function 2 app.js");
   navigator.serviceWorker.ready.then(function (serviceWorkerRegistration) {
     // Demande d'inscription au Push Server (1)
@@ -37,7 +37,7 @@ console.log("function 2 app.js");
     // Check for a permission prompt issue
     console.log('Subscription failed ' + subscriptionErr);
   });
-//}
+}
 
 
 /*this.onpush = function(event) {

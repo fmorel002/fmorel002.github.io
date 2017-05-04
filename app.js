@@ -16,6 +16,7 @@
 function subscribeDevice() {
 console.log("function 2 app.js");
   navigator.serviceWorker.ready.then(function (serviceWorkerRegistration) {
+    console.log("worker is ready");
     // Demande d'inscription au Push Server (1)
     return serviceWorkerRegistration.pushManager.subscribe({ userVisibleOnly: true });
   }).then(function (subscription) {

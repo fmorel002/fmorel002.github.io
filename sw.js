@@ -30,7 +30,7 @@
   }));
 });*/
 
-this.addEventListener('push', function(event) {
+/*this.addEventListener('push', function(event) {
   if (!(self.Notification && self.notification.permission === 'granted')) {
     return;
   }
@@ -54,4 +54,16 @@ this.addEventListener('push', function(event) {
       clients.openWindow('https://example.blog.com/2015/03/04/something-new.html');
     }
   };
+});*/
+
+self.addEventListener('push', function(event) {
+  var notificationOptions = {
+    body: "Hello World",
+    icon: icon ? icon : 'public/icons/icon-default.png',
+    data:{
+      url : 'http://example.com/updates'
+    }
+  };
+  title = "Ceci est une notification !";
+  return self.registration.showNotification(title, notificationOptions);
 });

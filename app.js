@@ -1,4 +1,44 @@
-this.onpush = function(event) {
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    // enregistrement du fichier 'service-worker.js' présent à la racine de l'application
+    navigator.serviceWorker.register('/fmorel002.github.io/sw.js').then(function (reg) {
+      // registration worked
+      console.log('Registration succeeded. Scope is ' + reg.scope);
+      subscribeDevice();
+    }).catch(function (error) {
+      // registration failed
+      console.log('Registration failed with ' + error);
+    });
+  }
+}
+
+function subscribeDevice() {
+  navigator.serviceWorker.ready.then(function (serviceWorkerRegistration) {
+    // Demande d'inscription au Push Server (1)
+    return serviceWorkerRegistration.pushManager.subscribe({ userVisibleOnly: true });
+  }).then(function (subscription) {
+    //sauvegarde de l'inscription dans le serveur applicatif (2)
+    fetch('/fmorel002.github.io/register-to-notification', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin',
+      body: JSON.stringify(subscription)
+    }).then(function (response) {
+      return response.json();
+    }).catch(function (err) {
+      console.log('Could not register subscription into app server', err);
+    });
+  }).catch(function (subscriptionErr) {
+    // Check for a permission prompt issue
+    console.log('Subscription failed ' + subscriptionErr);
+  });
+}
+
+
+/*this.onpush = function(event) {
   console.log(event.data);
   // From here we can write the data to IndexedDB, send it to any open
   // windows, display a notification, etc.
@@ -43,7 +83,7 @@ navigator.serviceWorker.register('/fmorel002.github.io/sw.js', { scope: '/fmorel
         });
       }
     });
-  }
+  }*/
 
 // register service worker
 
@@ -118,4 +158,20 @@ window.onload = function() {
       console.log(Error);
     });
   }
-};*/
+};
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+$('.button').click(function(){
+  var clickBtnValue = $(this).val();
+  var ajaxurl = 'ajax.php',
+  data =  {'action': clickBtnValue};
+  $.post(ajaxurl, data, function (response) {
+      // Response div goes here.
+      alert("action performed successfully");
+  });
+});
+
+});
+</script>*/
